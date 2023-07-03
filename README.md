@@ -1,5 +1,7 @@
 # Web3jsModule - Interacting with Ethereum Blockchain
 
+![Build](https://github.com/engcfraposo/nestjs-web3js/actions/workflows/main.yml/badge.svg)
+
 The Web3jsModule is a NestJS module that provides a connection to Ethereum's blockchain. It uses the web3.js library, which is a collection of libraries that allow you to interact with a local or remote Ethereum node using HTTP, IPC, or WebSocket.
 
 ## Features
@@ -13,7 +15,7 @@ The Web3jsModule is a NestJS module that provides a connection to Ethereum's blo
 To install this module, run:
 
 ```bash
-npm install your-package-name
+npm install nestjs-web3js
 ```
 
 Then, import `Web3jsModule` into your `AppModule`:
@@ -22,7 +24,7 @@ Then, import `Web3jsModule` into your `AppModule`:
 @Module({
   imports: [
     Web3jsModule.forRoot({
-      infuraUrl: 'Your infura url',
+      infuraUrl: '<Your-infura-url>',
     }),
   ],
 })
@@ -92,4 +94,4 @@ This project is licensed under the MIT License.
 
 - Cláudio Filipe Lima Rapôso - Sertão será Cloud
 
-See also the list of [contributors](https://github.com/your-repo/contributors) who participated in this project.
+See also the list of [contributors](https://github.com/nestjs-web3js/contributors) who participated in this project.
