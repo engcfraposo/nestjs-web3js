@@ -59,7 +59,7 @@ export class AppService {
   constructor(@Web3js private readonly web3: Web3) {}
 
   async getBalance() {
-    const balance = await web3.eth.getBalance('Your account address');
+    const balance = await this.web3.eth.getBalance('Your account address');
     return balance;
   }
 }
