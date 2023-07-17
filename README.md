@@ -31,6 +31,24 @@ Then, import `Web3jsModule` into your `AppModule`:
 export class AppModule {}
 ```
 
+or 
+
+```javascript
+@Module({
+  imports: [
+    Web3jsModule.forRootAsync({
+      imports: [ConfigModule],
+      useFactory: (configService: ConfigService) => ({
+        infuraUrl: configService.get<string>('INFURA_URL'),
+      }),
+      inject: [ConfigService],
+    }),
+  ],
+  providers: [AppService],
+})
+export class AppModule {}
+```
+
 ## Usage
 
 Once `Web3jsModule` is imported, you can inject `Web3jsService` into your services, controllers, or providers:
@@ -38,10 +56,9 @@ Once `Web3jsModule` is imported, you can inject `Web3jsService` into your servic
 ```javascript
 @Injectable()
 export class AppService {
-  constructor(private readonly web3jsService: Web3jsService) {}
+  constructor(@Web3js private readonly web3: Web3) {}
 
   async getBalance() {
-    const web3 = this.web3jsService.web3;
     const balance = await web3.eth.getBalance('Your account address');
     return balance;
   }
@@ -56,9 +73,6 @@ The `forRoot` method accepts an options object with the following properties:
 
 - `infuraUrl` (string): The URL to your Infura Ethereum node. This property must be a valid URL.
 
-### Web3jsService.web3: Required<Web3>
-
-The `web3` property is an instance of `Web3`, which is used to interact with the Ethereum blockchain. This property is read-only.
 
 ## DTO
 
