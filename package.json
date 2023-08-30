@@ -2,8 +2,8 @@
   "name": "nestjs-web3js",
   "version": "1.0.0",
   "homepage": "https://github.com/engcfraposo/nestjs-web3js",
-  "main": "dist/index.js",
-  "types": "dist/index.d.ts",
+  "main": "index.js",
+  "types": "index.d.ts",
   "description": "The nestjs-web3js is a NestJS module that provides a connection to Ethereum's blockchain. It uses the web3.js library, which is a collection of libraries that allow you to interact with a local or remote Ethereum node using HTTP, IPC, or WebSocket.",
   "author": "Cláudio Rapôso",
   "license": "MIT",
@@ -29,10 +29,10 @@
     "@nestjs/config": "^3.0.0",
     "@nestjs/core": "^10.0.0",
     "@nestjs/platform-express": "^10.0.0",
-    "nestjs-zod": "^2.3.3",
+    "nestjs-zod": "^3.0.0",
     "reflect-metadata": "^0.1.13",
     "rxjs": "^7.8.1",
-    "web3": "^4.0.2"
+    "web3": "^4.1.1"
   },
   "devDependencies": {
     "@nestjs/cli": "^10.0.0",
